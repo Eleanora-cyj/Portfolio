@@ -1,4 +1,3 @@
-
 * {
 	padding: 0;
 	margin: 0;
@@ -10,6 +9,23 @@ html {
 	font-family: 'Merriweather', sans-serif;
 	scroll-behavior: smooth;
 }
+.skip a{
+	background: white;
+	left: 0;
+	font-size: 16px;
+	padding: 10px;
+	-webkit-transition: top 1s ease-out;
+	transition: top 1s ease-out;
+	z-index: 2;
+	position: absolute;
+	top: -50px;
+  }
+
+  .skip a:focus{
+	position: absolute;
+	top: 10px;
+  }
+
 .container {
 	width: 100%;
 	height: auto;
@@ -97,7 +113,7 @@ html {
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-color: rgb(46, 45, 45);
+	background-color: black;
 	padding: 5rem 0;
 	transform: translateY(-100%);
 	transition: .3s ease transform;
@@ -109,9 +125,7 @@ html {
 	display: block;
 	position: relative;
 }
-.nav-bar .nav-list ul li .highlight{
-	font-weight: bold;
-}
+
 .nav-bar .nav-list ul li:hover:after {
 	transform: translateX(-50%) scale(1);
 	
@@ -128,13 +142,13 @@ html {
 	transition: .3s ease transform;
 }
 .nav-bar .nav-list ul li a {
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: white;
 	display: block;
 	letter-spacing: .15rem;
-	padding: 2rem 3rem;
+	padding: 2rem 1rem;
 }
 .nav-bar .nav-list.open ul {
 	transform: translateY(90px);
@@ -163,11 +177,9 @@ html {
 	line-height: 5rem;
 	color: black;
 }
-.home .home-info .home-info-subheading {
-	font-size: 1.6rem;
-	text-transform: uppercase;
-	letter-spacing: .5rem;
-	color: black;
+.home .home-info .home-info-heading:hover {
+	color: pink;
+	text-shadow: 1px 1px rgb(12, 12, 0);
 }
 .home .home-info .home-info-button {
 	margin-top: 30px;
@@ -180,14 +192,27 @@ html {
 	letter-spacing: .6rem;
 	background-color: rgba(0, 0, 0, 0.6);
 }
+.home .home-info .home-info-button:hover{
+	background-color: lightblue;
+	color:darkblue;
+	text-shadow: 1px 1px rgb(12, 12, 0);
+}
 .home .home-img {
 	height: auto;
 	width: 80%;
-	margin-bottom: 3rem;
+	margin: 2rem;
 }
 .home .home-img img {
 	height: 100%;
 	width: 100%;
+	filter: grayscale(100%);
+}
+.home .home-img img:hover{
+	filter: none;
+	opacity: 60%;
+}
+.home .home-img img:active{
+	opacity: 100%;
 }
 /* End home Section */
 
@@ -211,23 +236,6 @@ html {
 	margin-top: 10px;
 }
 
-/* .hello .hello-info .hello-info-button {
-	padding: 1.6rem 2.6rem;
-	display: inline-block;
-	background-color: rgba(0, 0, 0, 0.548);
-	color: whitesmoke;
-	text-decoration: none;
-	font-size: 1.6rem;
-	text-transform: uppercase;
-	letter-spacing: .2rem;
-	margin-top: 20px;
-	margin-bottom: 20px;
-} */
-
-.hello .hello-img {
-	margin-top: 50px;
-	display: block;
-}
 .hello .hello-img{
 	margin-top: 50px;
 	height: auto;
@@ -253,13 +261,13 @@ html {
 
 .about-info-heading {
 	font-size: 28px;
-	letter-spacing: .3rem;
+	letter-spacing: .2rem;
 	color: black;
 }
 
 .about-skill-heading{
 	font-size: 20px;
-	letter-spacing: .3rem;
+	letter-spacing: .2rem;
 	color: black;
 	margin-top: 20px;
 }
@@ -333,17 +341,7 @@ html {
 .grid-item4 {
 	grid-column: 1/ span2;
 }
-/* .about .about-img .about-img-wrapper::after {
-	position: absolute;
-	content: '';
-	right: -5rem;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 70%;
-	height: 120%;
-	background-color: rgba(34, 33, 33, 0.158);
-	z-index: -1;
-} */
+
 /* End About Section  */
 
 /* projects section  */
@@ -377,8 +375,8 @@ html {
 	flex-direction: column;
 }
 .project .project-info .service {
-	width: 100%;
-	min-height: 300px;
+	width: 95%;
+	min-height: 350px;
 	position: relative;
 	transition: .6s ease transform;
 	margin: 5px;
@@ -405,8 +403,53 @@ html {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgba(0, 0, 0, 0.13);
+	background-color: rgba(255, 173, 181, 0.136);
 	padding: 10px;
+	background-attachment: fixed; 
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-size: cover;      
+}
+.project .project-info .service:nth-child(1) .service-card .service-front{
+	background-image: url('../images/sentiment.png');
+}
+
+.project .project-info .service:nth-child(2) .service-card .service-front{
+	background-image: url('../images/m3.jpg');
+	color: rgb(255, 200, 0);
+	text-shadow: 2px 2px  rgb(12, 12, 0);
+}
+
+.project .project-info .service:nth-child(2) .service-card .service-back{
+	background-color: rgba(241, 233, 154, 0.436);
+}
+.project .project-info .service:nth-child(3) .service-card .service-front{
+	background-image: url('../images/c1.jpeg');
+}
+.project .project-info .service:nth-child(3) .service-card .service-back{
+	background-color: rgba(199, 238, 253, 0.536);
+}
+.project .project-info .service:nth-child(4) .service-card .service-front{
+	background-image: url('../images/e1.png');
+	color: rgb(143, 56, 6);
+	text-shadow: 2px 2px  rgb(247, 214, 178);
+}
+.project .project-info .service:nth-child(4) .service-card .service-back{
+	background-color: rgba(214, 194, 172, 0.336);
+}
+.project .project-info .service:nth-child(5) .service-card .service-front{
+	background-image: url('../images/data.png');
+}
+.project .project-info .service:nth-child(5) .service-card .service-back{
+	background-color: rgba(222, 222, 252, 0.386);
+}
+.project .project-info .service:nth-child(6) .service-card .service-front{
+	background-image: url('../images/f1.png');
+	color: rgb(151, 240, 93);
+	text-shadow: 2px 2px  rgb(12, 12, 0);
+}
+.project .project-info .service:nth-child(6) .service-card .service-back{
+	background-color: rgba(214, 253, 199, 0.336);
 }
 .project .project-info .service .service-card .service-back {
 	transform: rotateY(180deg);
@@ -420,16 +463,23 @@ html {
 	font-size: 24px;
 
 }
+.service-front .service-front-heading {
+	line-height: 3rem;
+
+}
 .service-back .service-back-heading {
-	font-size: 18px;
+	margin-top: 10px;
+	font-size: 20px;
+	line-height: 2.2rem;
 
 }
 .project .project-info .service:hover .service-card {
 	transform: rotateY(180deg);
 }
 .project .project-info .service .service-card .service-back .service-back-desc {
-	font-size: 14px;
-	margin-top: 10px;
+	font-size: 16px;
+	margin-top: 15px;
+	line-height: 2rem;
 	text-align: left;
 }
 
@@ -437,22 +487,6 @@ html {
 	display: inline;
 	width:100%;
 	height:100%
-}
-
-.project .project-info .service:nth-child(2) .service-card .service-front {
-	background-size: cover;
-	position: relative;
-
-}
-.project .project-info .service:nth-child(2) .service-card .service-front::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background-color: rgba(255, 200, 0, 0.15);
-	z-index: -1;
 }
 
 /* End project section  */
@@ -534,12 +568,12 @@ html {
 }
 
 /* Media query for desktop and tab  */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 880px) {
 	.nav-bar .nav-list .cross {
 		display: none;
 	}
 	.nav-bar {
-		width: 80%;
+		width: 95%;
 	}
 	.nav-bar .nav-list ul {
 		transform: translateX(0);
@@ -554,31 +588,100 @@ html {
 	.home {
 		height: 100vh;
 		flex-direction: row;
-		padding-left: 10%;
+		padding: 10%;
 		justify-content: center;
 		align-items: center;
 	}
 	.home .home-info {
-		max-width: 30%;
-		text-align: left;
+		max-width: 40%;	
 	}
-	.home .home-info .home-info-subheading {
-		font-size: 1.3rem;
-		letter-spacing: .5rem;
+
+	.home .home-info .home-info-heading{
+		font-size: 3.2rem;
+		line-height: 1.8em;
 	}
+
+	.home .home-info .home-info-button {
+		margin-top: 5rem;
+		padding: 2rem 5rem;
+		font-size: 1.8rem;
+	}
+
 	.home .home-img {
 		min-width: 400px;
 		max-width: 1000px;
 	}
+
+	.hello{
+		padding: 10rem 15rem;
+	}
+	.hello .hello-info .hello-info-heading {
+		font-size: 36px;
+		margin: 3rem;
+	}
+	.hello .hello-info .hello-info-desc{
+		font-size: 20px;
+		margin: 3rem;
+		line-height: 3.5rem;
+	}
 	.about {
-		width: 80%;
-		margin: 0 auto;
-		flex-direction: row;
+		width: 100%;
+		flex-direction: column;
 	}
 	.about .about-info {
-		width: 50%;
-		text-align: left;
-		padding-right: 17rem;
+		width: 80%;
+	}
+	.about .about-info .about-info-heading{
+		font-size: 36px;
+		margin-top: 5rem;
+	}
+	.about .about-info .about-info-desc{
+		font-size: 18px;
+		margin: 3rem;
+		line-height: 3.5rem;
+	}
+    .about .about-img{
+		margin: 2% 15%;
+	}
+	.about .about-info .about-skill-heading{
+		font-size: 24px;
+		margin-top: 5rem;
+	}
+    .about .about-info .about-info-button{
+		margin-left: 3rem;
+		margin-right: 3rem;
+		font-size: 18px;
+	}
+	.grid-container{
+		margin: 10% 10% 0% 10%;
+		grid-template-columns: 40% 40% 20%;
+	}
+
+	.project .project-header .project-header-heading {
+		margin-top: 5rem;
+		margin-bottom: 2rem;
+	}
+
+	.project .project-info .service {
+		width: 60%;
+		min-height: 400px;
+		transition: 1.5s ease transform;
+		margin: 5px;
+	}
+
+	.project .project-info .service .service-card {
+		transition: 1.5s ease transform;
+	}
+	.project .project-info .service .service-card .service-back .service-back-desc {
+		font-size: 18px;
+		margin: 20px 40px 10px 40px;
+		line-height: 2.5rem;
+	}
+	.service-back .service-back-heading {
+		font-size: 24px;
+		line-height: 3rem;
+		margin-left:40px;
+		margin-right:40px;
 	}
 	.education .education-header .education-header-desc {
 		max-width: 500px;
@@ -594,14 +697,67 @@ html {
 	}
 }
 /* End Media query for desktop and tab  */
-
-/* Media Query For Desktop Only  */
-@media only screen and (min-width: 1200px) {
-	.home .home-info .home-info-heading {
-		font-size: 6rem;
+@media only screen and (min-width: 1350px) {
+	.nav-bar {
+		width: 85%;
 	}
-	.home .home-info .home-info-subheading {
-		letter-spacing: .8rem;
+	.nav-bar .nav-list ul li a {
+		font-size: 1.8rem;
+		padding: 2rem 1.5rem;
+	}
+	.home .home-info .home-info-heading{
+		font-size: 4rem;
+		line-height: 2em;
+	}
+	.home .home-info .home-info-button {
+		margin-top: 7rem;
+		padding: 3rem 7rem;
+		font-size: 2rem;
+	}
+	.hello{
+		padding: 10rem 20rem;
+	}
+	.about .about-info {
+		width: 70%;
+	}
+	.about .about-img{
+		margin: 2% 25%;
+	}
+	
+	.project .project-info .service {
+		min-height: 280px;
 	}
 }
-/* End Media Query For Desktop Only  */
+
+@media screen and (prefers-reduced-motion: reduce){
+	html{
+		scroll-behavior: auto; /* Removes scroll animation */
+	}
+  
+	.skip a{
+	  -webkit-transition: none; 
+	  transition: none;        
+	 }
+  
+	/*Turn off parallax*/
+	.project .project-info .service .service-card .service-front,
+	.project .project-info .service .service-card .service-back{
+	  background-attachment: initial;
+	}
+	.project .project-info .service:nth-child(1) .service-card .service-front{
+		background-image: url('../images/s1.png');
+	}
+	.project .project-info .service {
+		transition: none;
+	}
+
+	.project .project-info .service .service-card {
+		transition: none;
+	}
+	.nav-bar .nav-list ul {
+		transition: none;
+	}
+	.nav-bar .nav-list ul li:after {
+		transition: none;
+	}
+  }
