@@ -21,10 +21,10 @@ html {
 	top: -50px;
   }
 
-  .skip a:focus{
+.skip a:focus{
 	position: absolute;
 	top: 10px;
-  }
+}
 
 .container {
 	width: 100%;
@@ -33,6 +33,7 @@ html {
 	align-items: center;
 	justify-content: center;
 }
+
 /* Nav Bar  */
 #nav-bar {
 	height: auto;
@@ -41,6 +42,7 @@ html {
 	z-index: 100;
 	background-color: black;
 }
+
 .nav-bar {
 	background-color: black;
 	left: 0;
@@ -317,6 +319,23 @@ html {
 	width: 100%;
 }
 
+/* #contact {
+	display: grid;
+    grid-row: 4;
+    grid-column: 1/ span 2;
+}
+
+#contact-form {
+    width: 100%;
+    height: 255px;
+    background: #eee;
+    border-radius: 8px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top:30px;
+} */
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -410,19 +429,21 @@ html {
     background-repeat: no-repeat; 
     background-size: cover;      
 }
-.project .project-info .service:nth-child(1) .service-card .service-front{
-	background-image: url('../images/sentiment.png');
-}
 
-.project .project-info .service:nth-child(2) .service-card .service-front{
+.project .project-info .service:nth-child(1) .service-card .service-front{
 	background-image: url('../images/m3.jpg');
 	color: rgb(255, 200, 0);
 	text-shadow: 2px 2px  rgb(12, 12, 0);
 }
 
-.project .project-info .service:nth-child(2) .service-card .service-back{
+.project .project-info .service:nth-child(1) .service-card .service-back{
 	background-color: rgba(241, 233, 154, 0.436);
 }
+
+.project .project-info .service:nth-child(2) .service-card .service-front{
+	background-image: url('../images/s1.png');
+}
+
 .project .project-info .service:nth-child(3) .service-card .service-front{
 	background-image: url('../images/c1.jpeg');
 }
@@ -438,7 +459,7 @@ html {
 	background-color: rgba(214, 194, 172, 0.336);
 }
 .project .project-info .service:nth-child(5) .service-card .service-front{
-	background-image: url('../images/data.png');
+	background-image: url('../images/green.jpeg');
 }
 .project .project-info .service:nth-child(5) .service-card .service-back{
 	background-color: rgba(222, 222, 252, 0.386);
@@ -451,7 +472,38 @@ html {
 .project .project-info .service:nth-child(6) .service-card .service-back{
 	background-color: rgba(214, 253, 199, 0.336);
 }
-.project .project-info .service .service-card .service-back {
+.project .project-info .service:nth-child(7) .service-card .service-front{
+	background-image: url('../images/stock.png');
+	color: rgb(250, 250, 24);
+	text-shadow: 2px 2px  rgb(12, 12, 0);
+}
+.project .project-info .service:nth-child(7) .service-card .service-back{
+	background-color: rgba(255, 210, 210, 0.336);
+}
+.project .project-info .service:nth-child(8) .service-card .service-front{
+	background-image: url('../images/eda1.jpeg');
+	/* color: rgb(245, 101, 120);
+	text-shadow: 1px 1px  rgb(12, 12, 0); */
+}
+.project .project-info .service:nth-child(8) .service-card .service-back{
+	background-color: rgba(221, 252, 253, 0.336);
+}
+.project .project-info .service:nth-child(9) .service-card .service-front{
+	background-image: url('../images/food.png');
+	color: rgb(147, 255, 147);
+	text-shadow: 2px 2px  rgb(12, 12, 0);
+}
+.project .project-info .service:nth-child(9) .service-card .service-back{
+	background-color: rgba(191, 250, 222, 0.336);
+}
+.project .project-info .service:nth-child(10) .service-card .service-front{
+	background-image: url('../images/police.jpeg');
+	
+}
+.project .project-info .service:nth-child(10) .service-card .service-back{
+	background-color: rgba(226, 215, 228, 0.336);
+}
+.project .project-info .service .service-card .service-back{
 	transform: rotateY(180deg);
 }
 .project .project-info .service .service-card .service-front i {
@@ -473,7 +525,7 @@ html {
 	line-height: 2.2rem;
 
 }
-.project .project-info .service:hover .service-card {
+.project .project-info .service:hover .service-card, .project .project-info .service:active .service-card, .project .project-info .service:focus .service-card, .project .project-info .service:focus-within .service-card{
 	transform: rotateY(180deg);
 }
 .project .project-info .service .service-card .service-back .service-back-desc {
@@ -666,8 +718,9 @@ html {
 		width: 60%;
 		min-height: 400px;
 		transition: 1.5s ease transform;
-		margin: 5px;
+		margin: 20px;
 	}
+	
 
 	.project .project-info .service .service-card {
 		transition: 1.5s ease transform;
@@ -677,6 +730,7 @@ html {
 		margin: 20px 40px 10px 40px;
 		line-height: 2.5rem;
 	}
+
 	.service-back .service-back-heading {
 		font-size: 24px;
 		line-height: 3rem;
@@ -727,6 +781,8 @@ html {
 	.project .project-info .service {
 		min-height: 280px;
 	}
+
+
 }
 
 @media screen and (prefers-reduced-motion: reduce){
@@ -738,15 +794,17 @@ html {
 	  -webkit-transition: none; 
 	  transition: none;        
 	 }
-  
+	
+	.nav-bar .nav-list .cross {
+		transition: none;
+	}
+
 	/*Turn off parallax*/
 	.project .project-info .service .service-card .service-front,
 	.project .project-info .service .service-card .service-back{
 	  background-attachment: initial;
 	}
-	.project .project-info .service:nth-child(1) .service-card .service-front{
-		background-image: url('../images/s1.png');
-	}
+	
 	.project .project-info .service {
 		transition: none;
 	}
